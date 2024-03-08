@@ -27,11 +27,23 @@ export default {
       state.cart.qty++;
       state.cart.total += payload.productData.price;
     },
+    removeProductFromCart(state, payload) {
+      const productInCartIndex = state.cart.items.findIndex(
+        (cartItem) => cartItem.productId === payload.productId
+      );
+      const prodData = state.cart.items[productInCartIndex];
+      state.cart.items.splice(productInCartIndex, 1);
+      state.cart.qty -= prodData.qty;
+      state.cart.total -= prodData.price * prodData.qty;
+    },
   },
   actions: {},
   getters: {
     counter(state) {
       return state.cart.qty;
+    },
+    cart(state) {
+      return state.cart;
     },
   },
 };

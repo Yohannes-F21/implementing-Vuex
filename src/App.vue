@@ -49,7 +49,7 @@ export default {
       isLoggedIn: this.isLoggedIn,
       // products: this.products,
       cart: this.cart,
-      addProductToCart: this.addProductToCart,
+      // addProductToCart: this.addProductToCart,
       removeProductFromCart: this.removeProductFromCart,
       login: this.login,
       logout: this.logout,
@@ -77,10 +77,10 @@ export default {
     //   this.cart.total += productData.price;
     // },
 
-    addProductToCart(prodData) {
-      this.$store.commit('addProductToCart', { productData: prodData });
-      // console.log(productData);
-    },
+    // addProductToCart(prodData) {
+    //   this.$store.commit('addProductToCart', { productData: prodData });
+    //   // console.log(productData);
+    // },
 
     removeProductFromCart(prodId) {
       const productInCartIndex = this.cart.items.findIndex(
